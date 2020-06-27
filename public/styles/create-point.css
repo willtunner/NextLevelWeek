@@ -1,0 +1,160 @@
+#page-create-point{
+  width: 90%;
+  max-width: 1100px;/*se chegar a 1100px não aumenta mais*/
+  margin: 0 auto;/*top e botton 0 e nas laterais automatico*/
+}
+
+#page-create-point header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 48px;
+}
+
+#page-create-point header a{
+  font-weight: bold;
+  color: var(--title-color);
+  display: flex;/*para colocar um ao lado do outro, usa todo o espaço disponivel*/
+  align-items: center;
+}
+
+#page-create-point header a span{
+  background-image: url('../assets/arrow-left.svg');
+  margin-right: 16px;
+  /*Necessario para aparecer a imagem*/
+  display: flex;
+  height: 24px;
+  width: 20px;
+}
+
+form{
+  margin: 80px auto;/*centraliza formulario, 80px cima e baixo e auto dos lados*/
+  background-color: white;
+  padding: 64px;/*Preenchimento, da uma margin na parte de dentro do box*/
+  border-radius: 8px;
+  max-width: 730px;
+}
+
+form h1{
+  font-size: 36px;
+}
+
+form fieldset{
+  margin-top: 64px;
+  border: 0;
+}
+
+form legend{
+ margin-bottom: 40px;
+
+ display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+form legend h2{
+  font-size: 24px;
+}
+
+form legend span{
+  font-size: 14px;
+  color: var(--title-color);
+  
+}
+
+form .field{
+  flex: 1;/*ajusta o tamanho de todos*/
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+}
+
+form .field-group{
+  display: flex; /*Deixa um ao lado do outro*/
+}
+
+form input,form select{/*Passa o css para o input e select*/
+  background-color: #f0f0f5;
+  border: 0;
+  padding: 16px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  /*outline: none;/*Tira a borda quando seleciona o input*/
+}
+
+form select{/*Reseta aparencia do select para pegar css acima em todos navegadores que colocam como padrão*/
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+form label{
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+form .field-group .field + .field{/*Pega somente o segundo fild que está seguido de outro*/
+  margin-left: 24px;
+}
+
+form button{
+  width: 260px;
+  height: 56px;
+  background-color: var(--primary-color);
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  border: 0;
+  margin-top: 40px;
+  transition: background-color 400ms;
+}
+
+form button:hover{
+  background-color: #2fb86e;
+}
+
+
+.itens-grid{
+  display: grid;/* Transfoma o display em grid*/
+  /*grid-template-columns: 200px 200px 200px;/*Diz que quer 3 colunas de 200px*/
+  grid-template-columns: 1fr 1fr 1fr;/*mais dinamico que o de cima, calcula 3 colunas por fração do espaço*/
+  gap: 16px;/*Espaçamento entre eles parecido com o margin mas para grid*/
+}
+
+.itens-grid li{
+  background-color: #f5f5f5;
+  list-style: none;/*Tira os pontinhos da lista*/
+  border: 2px solid #f5f5f5;
+  height: 180px;
+  border-radius: 8px;
+  padding: 32px 24px 16px;/*32px no topo, 24px nas laterais e em baixo 16px*/
+  display: flex;/*coloca um ao lado do outro dentro de cada li*/
+  flex-direction: column;/* Coloca um em cima do outro*/
+  align-items: center;/*alinha tudo ao centro*/
+  justify-content: space-between;/*No caso de coluna coloca um em cima e outro em baixo nas extremidades*/
+  text-align: center;/*Alinha o texto ao centro*/
+  cursor: pointer;/*Coloca o cursor da mãozinha*/
+}
+
+.itens-grid li span{/*Parte do texto abaixo da img*/
+  flex: 1;/*Para ter um tamanho que preenche sózinho*/
+  display: flex;/*Para poder ajustar dentro do espaço que tem*/
+  align-items: center;/*alinha o texto ao centro com o espaço liberado acima*/
+  color: var(--title-color);/*Coloca a cor padrão do titulo*/
+  margin-top: 12px;
+}
+
+/*Classe para função de click nos itens*/
+/*li.selected - Procura dentro grid o li que tenha classe selected*/
+/*li .selected - dentro do li existi algum elemento com classe selected*/
+.itens-grid li.selected{
+  background: #e1faec;/*verde bem clarinho*/
+  border: 2px solid #34cb79;/*Cor da borda*/
+}
+
+.itens-grid li img,
+.itens-grid li span{
+  pointer-events: none;
+}

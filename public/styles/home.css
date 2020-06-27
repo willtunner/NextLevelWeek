@@ -1,0 +1,101 @@
+#page-home {
+  height: 100vh;/*100(Viewport High) - Pega altura que está aparecendo na tela */
+  background:url('../assets/home-background.svg') no-repeat;/*Coloca imagem no background da div*/
+  background-position: 35vw bottom;/* Define que está na posição 35 e em baixo*/
+}
+
+#page-home .content{
+  width: 90%;
+  max-width: 1100px;/*Largura maxima, não quer mais que o maximo*/
+  margin: 0 auto ;/*Define a margin automatica com o espaço que sobra*/
+  
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+
+}
+
+#page-home header {
+  margin-top: 50px;/* Coloca o espaço em cima*/
+  display: flex;/* Coloca um ao lado do outro*/
+  align-items: center;/* Alinha os itens ao centro*/
+  justify-content: space-between;/*Joga cada um para um canto*/
+}
+
+#page-home header a{
+  /*Precisa colocar como flex tb para ficar um ao lado do outro*/
+  display: flex;
+  color: var(--title-color);/*Usa a cor como variavel do root*/
+  font-weight: 700;/*deixa fonte negrito*/
+  
+}
+
+#page-home header a span{
+  margin-right: 16px;/*afasta a img do link*/
+  background-image: url('../assets/log-in.svg');
+  /*Precisa para aparecer a imagem*/
+  /*Vem como inline por padrão mas precisa ser flex para aparecer imagem*/
+  display: flex;
+  width: 20px;
+  height: 20px;
+}
+
+#page-home main{
+  max-width: 560px;
+  width: 700px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#page-home main h1 {
+  font-size: 55px;
+}
+
+#page-home main p{
+  font-size: 24px;
+  line-height: 38px;/*Coloca o espaçamento no texto*/
+  margin-top: 24px;
+}
+
+#page-home main a {
+  width: 100%;
+  max-width: 360px;
+  height: 70px;
+  border-radius: 10px;
+  background-color: var(--primary-color);/*Coloca a cor no botão*/
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+  transition: 400ms;/*da um efeito suave ao passar o mouse*/
+  
+}
+
+#page-home main a:hover{
+  background-color: #2fb86e;
+}
+
+#page-home main a span{
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  width: 72px;
+  height: 72px;
+  background-color: rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#page-home main a span::after{
+  content: "";
+  background-image: url('../assets/search.svg');
+  width: 20px;
+  height: 20px;
+}
+
+#page-home main a strong{
+  flex: 1;
+  color: white;
+  text-align: center;
+}

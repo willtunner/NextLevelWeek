@@ -1,0 +1,39 @@
+/*Root raiz do projeto, pode definir vareaveis no css para reaproveitar o cod*/
+:root{
+  --title-color: #322153;
+  --primary-color: #34cb79;
+}
+
+/*Zera todos os seletores do css - reset*/
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html { font-family: 'Roboto', sans-serif;}
+
+body{
+  background: #f0f0f5;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+/* ## CSS GLOBAL ## */
+
+a{
+  /*Dessa forma todo link fica sem o sublinhado em baixo */
+  text-decoration: none;/*Tira a linha do link*/
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-family: 'Ubuntu', sans-serif;
+  color: var(--title-color);
+}
+
+
+
+
+
+
+

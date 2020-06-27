@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{# Cria a variavel da div para passar para layout#}
+{% set pageId = "page-search-results" %}
+
+{# Cria o bloco dos title #}
+{% block title %}
+  <title>Resultado da Pesquisa</title>
+{% endblock title %}
+
+{# Cria o bloco dos styles #}
+{% block styles %}
+  <link rel="stylesheet" href="/styles/search-results.css">
+{% endblock styles %}
+
+{# Cria o bloco do conteudo #}
+{% block content %}
+  {% include "partials/page-header.html" %}
+
+  <!-- CRIA MAIN-->
+  <main>
+    {% if total > 0 %}
+      <h4>
+        <strong>{{total}}
+          pontos
+        </strong>
+        encontrados
+      </h4>
+
+      <div class="cards">
+        {% for place in places %}
+          {#Places é o mesmo criado na linha 41 do server.js#}
+          <div class="card">
+            <img src="{{place.image}}" alt="{{place.name}}">
+            <h1>{{place.name}}</h1>
+            <h3>{{place.items}}</h3>
+            <p>{{place.city}},
+              {{place.state}}
+              <br/>
+              {{place.address}}<br/>
+              {{place.address2}}
+            </p>
+          </div>
+        {% endfor %}
+      </div>
+      {%else%}
+      {#ELSE SEMPRE ANTES DO ENDIF - SE NÃO TIVER NADA CADASTRADO#}
+      <h4>
+        <strong>Nenhum</strong>
+        local encontrado
+      </h4>
+    {% endif %}
+
+  </main>
+{% endblock content %}
+
+{# Cria o bloco do modal #}
+{% block modal %}{% endblock modal %}

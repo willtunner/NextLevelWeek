@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{# Cria a variavel da div para passar para layout#}
+{% set pageId = "page-home" %}
+
+{# Cria o bloco dos styles #}
+{% block styles %}
+  <link rel="stylesheet" href="/styles/home.css">
+  <link rel="stylesheet" href="/styles/modal.css">
+{% endblock styles %}
+
+{# Cria o bloco do conteudo #}
+{% block content %}
+  <div class="content">
+    <header>
+      <img src="/assets/logo.svg" alt="logomarca">
+      <a href="/create-point">
+        <span></span>
+        Cadastre um ponto de coleta
+      </a>
+    </header>
+
+    <!---- Main quer dizer parte principal ---->
+    <main>
+      <h1>Seu marketplace de coleta de residuos</h1>
+
+      <p>Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente. botão</p>
+
+      <a href="#">
+        <span></span>
+        <strong>Pesquisar pontos de coleta</strong>
+      </a>
+    </main>
+  </div>
+{% endblock content %}
+
+{# Cria o bloco do modal #}
+{% block modal %}
+  {% include "partials/modal.html" %}
+{% endblock modal %}
+
+{# Cria o bloco do scripts #}
+{% block scripts %}
+  <script src="/scripts/index.js"></script>
+{% endblock scripts %}
